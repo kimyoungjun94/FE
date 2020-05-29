@@ -1,3 +1,6 @@
+
+'use strict';
+
 const tooggleBtn = document.querySelector('.navbar__tooggleBtn');
 const menu = document.querySelector('.navbar__menu');
 const icons = document.querySelector('.navbar__icons');
