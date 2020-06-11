@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-
-  <!-- Use jquery  -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
-  <script type="text/javascript" src="array-api.js" defer></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload = () => {
+			let sum = 0;
+			let name = '김영준';
+			let age = 27;
+			for(let i = 0; i <= 100; i++) {
+				sum += i;
+			}
+			document.getElementById('sum').innerHTML = sum;
+			document.getElementById('name').innerHTML = name;
+			document.getElementById('age').innerHTML = age;
+			// console.log(sum);
+		}
+	</script>
 </head>
 <body>
+	<div>1~10까지의 합은 <span id="sum"></span></div>
+	<div>저의 이름은 <span id="name"></span> 이고 나이는 <span id="age"></span> 입니다.</div>
 </body>
 </html>

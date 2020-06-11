@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!-- {{ othermethods('안녕하세요~') }} -->
+		<!-- data binding -->
+		<!-- 속성 앞에 v-bind: data binding에 쓰인다. -->
+		<!-- v-bind 대신 ':'만 넣어도 동작한다. -->
+		<!-- <input :type="type" :value="inputData"> -->
+		<!-- link를 걸때는 href 속성 앞에 ':'을 붙여주고 href 속성값 안에 data이름 link를 넣어준다. -->
+		<!-- <a :href="getLink()">cozy</a> -->
+
+		<!-- event -->
+		<!-- onclick -> v-on:click -->
+		<!-- {{ person.year }} <br>
+		<button v-on:click="plus">더하기!</button>
+		<button v-on:click="minus">빼기!</button> -->
+
+		<form v-on:submit.prevent="">
+			<input v-on:keyup.enter="submit" type="text">
+			<button type="submit">Submit</button>
+		</form>
+		<!-- <a :href="getLink()">google</a> -->
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: {
+				person: {
+					str: 'Vue.js',
+					name: 'kim',
+					age: 27,
+					year: 2020
+				},
+				inputData: 'hello',
+				type: 'text',
+				link: 'https://www.google.com'
+			},
+			methods: {
+				getLink() {
+					return this.link;
+				},
+				nextYear() {
+					return this.person.name + '는 내년에 ' + (this.person.age + 1) + '살 입니다.';
+				},
+				othermethods(greeting) {
+					return greeting + ' ' + this.nextYear();
+				},
+				plus() {
+					this.person.year++;
+				},
+				minus() {
+					this.person.year--;
+				},
+				submit() {
+					alert('submitted');
+					console.log('hello');
+				}
+			}
+		});
+	</script>
+</body>
+</html>
