@@ -28,7 +28,7 @@ json = JSON.stringify(rabbit);
 console.log(json);
 
 // 원하는 property만 정해서 뽑는다.
-json = JSON.stringify(rabbit, ["name", "birthDate"]);
+json = JSON.stringify(rabbit, ["name", "color", "birthDate"]);
 console.log(json);
 
 // Callback function을 사용해서 뽑는다.
@@ -45,7 +45,7 @@ console.log(json);
 // 2. JSON to Object
 // parse(json)
 json = JSON.stringify(rabbit);
-console.log(json);
+console.log(json); //{"name":"tori","color":"white","size":null,"birthDate":"2020-07-08T11:30:34.457Z"}
 const obj = JSON.parse(json, (key, value) => {
 	console.log(`key: ${key}, value: ${value}`);
 	// return value;
@@ -63,7 +63,7 @@ console.log(rabbit.birthDate.getDate());
 // new Date(value)로 object를 만들어주면 obj.birthDate.getDate()는 정상적으로 실행된다.
 console.log(obj.birthDate.getDate());
 
-console.clear();
+// console.clear();
 
 // 1. example
 // Object to JSON
@@ -113,7 +113,7 @@ console.log(car.makeDate.getDate());
 console.log(carobj.makeDate.getDate());
 // console.log(carjson.makeDate); // undefined
 
-console.clear();
+// console.clear();
 
 let emp = {
 	name: 'Kim',
@@ -125,9 +125,9 @@ for(let i in emp) {
 }
 console.log(emp['hasjob']);
 
-console.clear();
+// console.clear();
 
 // mparts.js 에 있는 M 객체의 f()를 실행한다.
-let part = require('./mparts.js');
-console.log(part);
-M.f();
+// let part = require('./mparts.js');
+// console.log(part);
+// M.f();
